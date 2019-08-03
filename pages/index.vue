@@ -21,6 +21,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import TodoItem from '~/components/TodoItem.vue'
+import store from '~/store/store'
 
 type todoType = {
   task: string | number
@@ -33,22 +34,16 @@ type todoType = {
   }
 })
 export default class Index extends Vue {
-  todoList: todoType[] = [
-    {
-      task: 'タスク1',
-      isDone: false
-    }
-  ]
+  get todoList() {
+    return store.state.todoList
+  }
 
   inputTodoValue: string | number = ''
 
   isFilter: boolean = false
 
   addTodo() {
-    this.todoList = [
-      ...this.todoList,
-      { task: this.inputTodoValue, isDone: false }
-    ]
+    store.commit('addTodo', this.inputTodoValue)
   }
 }
 </script>

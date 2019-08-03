@@ -1,5 +1,5 @@
 <template>
-  <li class="todoItem" v-if="isFilter ? !item.isDone : true">
+  <li v-if="isFilter ? !item.isDone : true" class="todoItem">
     <label>
       <p class="isDone">
         <input id="" v-model="item.isDone" type="checkbox" name="" />
