@@ -3,12 +3,16 @@
     <div class="inputForm">
       <input v-model="inputTodoValue" type="text" />
       <button type="button" @click="addTodo">add</button>
+      <button type="button" @click="isFilter = !isFilter">
+        {{ isFilter ? 'off filter' : 'on filter' }}
+      </button>
     </div>
     <ul class="todoListWrap">
       <TodoItem
         v-for="(item, index) in todoList"
         :key="`todo${index}`"
         :item="item"
+        :is-filter="isFilter"
       />
     </ul>
   </div>
@@ -37,6 +41,8 @@ export default class Index extends Vue {
   ]
 
   inputTodoValue: string | number = ''
+
+  isFilter: boolean = false
 
   addTodo() {
     this.todoList = [

@@ -1,5 +1,5 @@
 <template>
-  <li class="todoItem">
+  <li class="todoItem" v-if="isFilter ? !item.isDone : true">
     <label>
       <p class="isDone">
         <input id="" v-model="item.isDone" type="checkbox" name="" />
@@ -20,6 +20,8 @@ type todoType = {
 export default class todoItem extends Vue {
   @Prop({ default: {} })
   item!: todoType
+  @Prop({ default: false })
+  isFilter!: boolean
 }
 </script>
 
