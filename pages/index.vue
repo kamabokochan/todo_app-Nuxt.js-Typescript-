@@ -1,64 +1,84 @@
 <template>
   <div class="todoList">
+    <div class="inputForm">
+      <input v-model="inputTodoValue" type="text" />
+      <button type="button" @click="addTodo">add</button>
+    </div>
     <ul class="todoListWrap">
-      <li v-for="(item, index) in todoList" :key="`todo${index}`">
-        <p class="taskId">{{ index }}</p>
-        <p class="task">{{ item.task }}</p>
-        <p class="isDone">
-          <input id="" v-model="item.isDone" type="checkbox" name="" />
-        </p>
-      </li>
+      <TodoItem
+        v-for="(item, index) in todoList"
+        :key="`todo${index}`"
+        :item="item"
+      />
     </ul>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Logo from '~/components/Logo.vue'
+import TodoItem from '~/components/TodoItem.vue'
 
 type todoType = {
-  id: number
-  task: string
+  task: string | number
   isDone: boolean
 }
 
 @Component({
   components: {
-    Logo
+    TodoItem
   }
 })
 export default class Index extends Vue {
   todoList: todoType[] = [
     {
-      id: 1,
       task: 'タスク1',
-      isDone: false
-    },
-    {
-      id: 2,
-      task: 'タスク2',
-      isDone: false
-    },
-    {
-      id: 3,
-      task: 'タスク3',
       isDone: false
     }
   ]
+
+  inputTodoValue: string | number = ''
+
+  addTodo() {
+    this.todoList = [
+      ...this.todoList,
+      { task: this.inputTodoValue, isDone: false }
+    ]
+  }
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
 * {
-  margin: 0;
-  padding: 0;
+  margin 0
+  padding 0
 }
+
 ul,
 li {
-  list-style: none;
+  list-style none
 }
-.todoListWrap > li {
-  display: flex;
-  align-items: center;
+
+.inputForm {
+  display flex
+  align-items center
+  justify-content center
+  margin 40px 0
+  input[type="text"] {
+    font-size 16px
+  }
+  button {
+    width: 100px;
+    height: 25px;
+    border: solid 1px #ccc;
+  }
+}
+
+.todoListWrap {
+  padding 30px
+  > li {
+    + li {
+      margin-top 15px
+    }
+  }
 }
 </style>
