@@ -8,8 +8,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Header from '~/components/main/Header'
-import Footer from '~/components/main/Footer'
+import Header from '~/components/main/Header.vue'
+import Footer from '~/components/main/Footer.vue'
 
 @Component({
   components: {

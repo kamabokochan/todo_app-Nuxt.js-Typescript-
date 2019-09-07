@@ -16,11 +16,6 @@ import { Component, Vue } from 'vue-property-decorator'
 import TodoItem from '~/components/TodoItem.vue'
 import store from '~/store/store.ts'
 
-type todoType = {
-  task: string | number
-  isDone: boolean
-}
-
 @Component({
   components: {
     TodoItem
