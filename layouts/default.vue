@@ -24,6 +24,7 @@ export default class Default extends Vue {}
 * {
   margin: 0;
   padding: 0;
+  font-family: 'M PLUS 1p', sans-serif;
 }
 
 ul,

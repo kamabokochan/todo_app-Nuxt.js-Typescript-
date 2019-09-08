@@ -23,6 +23,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    // console メソッドを注意
+    "no-console": 1,
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error"
   }

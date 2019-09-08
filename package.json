@@ -24,6 +24,9 @@
     "vuex-class": "^0.3.2"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
     "@nuxtjs/eslint-config": "^0.0.1",
     "@typescript-eslint/eslint-plugin": "^1.6.0",
     "@typescript-eslint/parser": "^1.6.0",
@@ -41,6 +44,8 @@
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "nodemon": "^1.18.10",
+    "nuxt-fontawesome": "^0.4.0",
+    "nuxt-webfontloader": "^1.1.0",
     "prettier": "1.16.4",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",

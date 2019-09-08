@@ -1,6 +1,6 @@
 <template>
   <header>
-    TODO App
+    TODO
   </header>
 </template>
 
@@ -21,7 +21,7 @@ header {
   justify-content: center;
   width: 100%;
   height: 44px;
-  background-color: #999;
+  background-color: #333;
   color: #fff;
 }
 </style>

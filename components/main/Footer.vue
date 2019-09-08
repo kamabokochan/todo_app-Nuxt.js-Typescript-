@@ -2,10 +2,9 @@
   <footer>
     <div class="inputForm">
       <input v-model="inputTodoValue" type="text" />
-      <button type="button" @click="addTodo">+</button>
-      <!-- <button type="button" @click="isFilter = !isFilter">
-        {{ isFilter ? 'off filter' : 'on filter' }}
-      </button> -->
+      <button type="button" @click="addTodo">
+        <font-awesome-icon icon="plus-square" />
+      </button>
     </div>
   </footer>
 </template>
@@ -20,6 +19,7 @@ export default class Footer extends Vue {
   isFilter: boolean = false
   addTodo() {
     store.commit('addTodo', this.inputTodoValue)
+    this.inputTodoValue = ''
   }
 }
 </script>
@@ -34,7 +34,7 @@ footer {
   justify-content: center;
   width: 100%;
   height: 44px;
-  background-color: #999;
+  background-color: #333;
   color: #fff;
 }
 
@@ -47,16 +47,17 @@ footer {
   input[type="text"] {
     width: 80%;
     height: 30px;
+    padding: 0 10px;
     border-radius: 30px;
     border: solid 1px #ccc;
     font-size: 16px;
   }
   button {
-    width: 60px;
-    height: 35px;
-    border: solid 1px #ccc;
-    border-radius: 6px;
+    font-size: 30px;
     margin-left: 15px;
+    svg path {
+      fill: #999;
+    }
   }
 }
 </style>

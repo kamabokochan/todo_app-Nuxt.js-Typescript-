@@ -15,8 +15,14 @@ const state: TodosState = {
 export default new Vuex.Store({
   state: state,
   mutations: {
-    addTodo(state, payload) {
-      state.todoList = [...state.todoList, { task: payload, isDone: false }]
-    }
+    addTodo(state, newTask) {
+      state.todoList = [...state.todoList, { task: newTask, isDone: false }]
+    },
+    deleteTodo(state, index) {
+      state.todoList.splice(index, 1);
+    },
+    switchStatus(state, index) {
+      state.todoList[index].isDone = !state.todoList[index].isDone;
+    },
   }
 })
