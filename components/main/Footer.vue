@@ -18,6 +18,7 @@ export default class Footer extends Vue {
   inputTodoValue: string | number = ''
   isFilter: boolean = false
   addTodo() {
+    if (!this.inputTodoValue) return
     store.commit('addTodo', this.inputTodoValue)
     this.inputTodoValue = ''
   }
